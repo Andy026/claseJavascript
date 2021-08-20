@@ -35,3 +35,9 @@ do{
 for(let i = 1; i <= 20; i++ /*i=i+2*/){
     document.write("Estructura for vuelta " + i + "<br>")
 }
+
+/*
+switch
+
+
+*/
