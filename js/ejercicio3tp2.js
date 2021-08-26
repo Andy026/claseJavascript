@@ -11,6 +11,6 @@ do {
     else {
         resultado = resultado + "-" + cadena; //Si hay mas de una cadena se concatena con guión
     }
-} while (confirm("Desea seguir?")); // Mientras sea true, se volverá a ejecutar el bucle
+} while (confirm("¿Desea seguir?")); // Mientras sea true, se volverá a ejecutar el bucle
 
 document.write(resultado); // Si el usuario presiona Cancelar(false), se printea el resultado en pantalla.
