@@ -19,6 +19,7 @@ do {
     numero = Number(numero);
     if (numero >= 0 && numero <= 99999999) {
       resto = numero % 23;
+      console.log(resto);
       switch (resto) {
         case 0:
           letra = "T";

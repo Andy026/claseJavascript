@@ -4,18 +4,17 @@ Si no es un número deberá indicarse con un «alert» y seguir pidiendo número
 Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
 */
 
-let suma = 0; 
+let suma = 0;
 
-do{
-    let numero = prompt("Escribe un número");
-    if(Number(numero) == numero){
-        numero = Number(numero);
-        suma = suma + numero;
-    }else{
-        if(numero != undefined){
-            alert(numero + " no es un número");
-        }
-    }
-}while (confirm("¿Desea seguir?"));
+do {
+  let numero = prompt("Escribe un número");
+  console.log(numero);
+  if (Number(numero) == numero) {
+    numero = Number(numero);
+    suma = suma + numero;
+  } else {
+    alert(numero + " no es un número");
+  }
+} while (confirm("¿Desea seguir?"));
 
 document.write(suma);
