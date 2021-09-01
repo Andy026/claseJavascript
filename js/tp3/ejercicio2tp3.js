@@ -20,5 +20,13 @@ do {
 
   ciudad = prompt("escribe una ciudad");
 } while (ciudad != "0" && confirm("desea continuar?"));
+  document.write(ciudades + "<br>");
 
-document.write(ciudades);
+console.log(ciudades.length);
+document.write(ciudades[0] + " ");
+document.write(ciudades[2] + " ");
+document.write(ciudades[ciudades.length-1]);
+ciudades.push("París");
+document.write("<br>" + ciudades[1]);
+ciudades.splice(1, 1, "Barcelona");
+console.log(ciudades);
