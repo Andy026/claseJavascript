@@ -20,16 +20,31 @@ la descripción del estado de la cuenta.
 */
 
 let cuenta = {
-    titular: 'Alex',
-    saldo: 0,
-    ingresar: function(){
-
-    },
-    extraer: function(){
-
-    },
-    informar: function(){
-
-    }
+  titular: "Alex",
+  saldo: 0,
+  ingresar: function (monto) {
+    cuenta.saldo += monto;
+    return "Su monto es $" + monto;
+  },
+  extraer: function (extraccion) {
+    cuenta.saldo -= extraccion;
+    return "Has extraido $" + extraccion;
+  },
+  informar: function () {},
+};
+function mostrarObjeto() {
+  return document.write(
+    `Titular: ${cuenta.titular}<br>Saldo de cuenta: ${cuenta.saldo}`
+  );
 }
 
+//console para el ingreso de dinero
+console.log(cuenta.saldo);
+console.log(cuenta.ingresar(20));
+console.log(cuenta.saldo);
+
+//console para la extracción del dinero
+console.log(cuenta.extraer(10));
+console.log(cuenta.saldo);
+
+mostrarObjeto();
