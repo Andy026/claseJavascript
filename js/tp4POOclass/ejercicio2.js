@@ -22,15 +22,18 @@ la descripción del estado de la cuenta.
 let cuenta = {
   titular: "Alex",
   saldo: 0,
+  estado: true,
   ingresar: function (monto) {
     cuenta.saldo += monto;
-    return "Su monto es $" + monto;
+    return `Su monto es $${monto}`;
   },
   extraer: function (extraccion) {
     cuenta.saldo -= extraccion;
-    return "Has extraido $" + extraccion;
+    return `Has extraido $${extraccion}`
   },
-  informar: function () {},
+  informar: function () {
+    return cuenta.estado
+  },
 };
 function mostrarObjeto() {
   return document.write(
