@@ -46,31 +46,103 @@ class Funkopop {
   }
 }
 
-class Persona{
-    constructor(nombre, apellido, dni, email, telefono, edad){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.email = email;
-        this.telefono = telefono;
-        this.edad = edad;
-    }
+class Persona {
+  constructor(nombre, apellido, dni, email, telefono, edad, usuario, pass) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.dni = dni;
+    this.email = email;
+    this.telefono = telefono;
+    this.edad = edad;
+    this.usuario = usuario;
+    this.pass = pass;
+  }
 
-    mostrarDatos(){
-        document.write(`
-        <br>Nombre: ${this.nombre}
+  mostrarDatos() {
+    document.write(`
+    <br><br>Nombre: ${this.nombre}
         <br>Apellido: ${this.apellido}
         <br>DNI: ${this.dni}
         <br>Email: ${this.email}
         <br>Telefono: ${this.telefono}
         <br>Edad: ${this.edad}
-        `)
-    }
+        <br>Usuario: ${this.usuario}
+        <br>Contraseña: ${this.pass}
+        `);
+  }
+}
+
+//herencia
+class Alumno extends Persona {
+  constructor(
+    nombre,
+    apellido,
+    dni,
+    mail,
+    telefono,
+    edad,
+    usuario,
+    pass,
+    matricula,
+    comision,
+    notas,
+    curso
+  ) {
+    //invocar el metodo constructor de la clase persona
+    super(nombre, apellido, dni, mail, telefono, edad, usuario, pass);
+    this.matricula = matricula;
+    this.comision = comision;
+    this.notas = notas;
+    this.curso = curso;
+  }
+  //sobreescribir/modificar metodos (polimorfismo)
+  mostrarDatos() {
+    document.write(`
+    <br><br>Nombre: ${this.nombre}
+        <br>Apellido: ${this.apellido}
+        <br>DNI: ${this.dni}
+        <br>Email: ${this.email}
+        <br>Telefono: ${this.telefono}
+        <br>Edad: ${this.edad}
+        <br>Usuario: ${this.usuario}
+        <br>Matricula: ${this.matricula}
+        <br>Comisión: ${this.comision}
+        <br>Notas: ${this.notas}
+        <br>Curso: ${this.curso}
+        `);
+  }
+}
+
+class Tutor extends Persona {
+  constructor(
+    nombre,
+    apellido,
+    dni,
+    email,
+    telefono,
+    edad,
+    usuario,
+    pass,
+    legajo,
+    comision,
+    antiguedad
+  ) {
+    super(nombre, apellido, dni, email, telefono, edad, usuario, pass);
+    this.legajo = legajo;
+    this.comision = comision;
+    this.antiguedad = antiguedad;
+  }
+  mostrarDatosTutor(){
+      document.write(`
+        <br>Legajo: ${this.legajo}
+        <br>Comision: ${this.comision}
+        <br>Antiguedad: ${this.antiguedad}
+      `)
+  }
 }
 
 //alumno: notas, usuario, contraseña, matricula, comisión
 //tutor: usuario, contraseña, legajo, comision
-
 
 //crear una instancia de un objeto
 let strange = new Funkopop(
@@ -87,8 +159,6 @@ let viudaNegra = new Funkopop(
   "1asdaksdj2"
 );
 
-
-
 //usar el metodo mostrarDatos
 strange.mostrarDatos();
 hulk.mostrarDatos();
@@ -101,7 +171,34 @@ document.write(`<br>Propiedad Precio: $${strange.mostrarPrecio}`);
 strange.modificarPrecio = 6000;
 document.write(`<br>Propiedad Precio: $${strange.mostrarPrecio}`);
 
-let juan = new Persona('Juan', 'Alaniz', 33659875, 'jalaniz@gmail.com', '1532695875', 35);
-let abel = new Persona('Abel', 'Cordoba', 34625184, 'acordoba@gmail.com', '1516854932', 34);
+let juan = new Persona(
+  "Juan",
+  "Alaniz",
+  33659875,
+  "jalaniz@gmail.com",
+  "1532695875",
+  35,
+  "jalaniz",
+  "123asdasd"
+);
+let abel = new Alumno(
+  "Abel",
+  "Cordoba",
+  34625184,
+  "acordoba@gmail.com",
+  "1516854932",
+  34,
+  "acordoba",
+  "87sd5w",
+  1569,
+  "16i",
+  "A",
+  "Fullstack"
+);
 juan.mostrarDatos();
 abel.mostrarDatos();
+
+let jony = new Tutor('Jonathan', 'Plodzien', 37659841, 'jplodzien@gmail.com', '1569875432', 27, 'jplodzien', '67hsjhd', 234, '16i', 5);
+
+jony.mostrarDatos();
+jony.mostrarDatosTutor();
