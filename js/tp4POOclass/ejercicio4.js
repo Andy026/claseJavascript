@@ -6,27 +6,35 @@ Posteriormente, cree tres instancias de este objeto y guárdalas en un array.
 Por último, utilice el método imprime datos para mostrar por pantalla los valores de los tres objetos instanciados.
 */
 
-class Producto{
+class Producto {
     constructor(codigo, nombre, precio){
-    this.codigo = codigo;
-    this.nombre = nombre;
-    this.precio = precio;  
-}
-imprimirDatos(){
-document.write(`<h1>${this.nombre}</h1>
-Codigo del producto: ${this.codigo}
-<br>Nombre del producto: ${this.nombre}
-<br>Precio del producto: ${this.precio}
-`)
-}
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    //Metodo para imprimir datos en pantalla
+    imprimeDatos(){
+        document.write(`<br>
+        Codigo: $${this.codigo} <br>
+        Nombre: $${this.nombre} <br>
+        Precio: $${this.precio} <br>`);
+    }
+
 }
 
-let playStation = new Producto('as2131d', 'PlayStation 4', 50000);
-let xbox = new Producto('ac21312', 'xbox', 60000);
-let nintendoSwitch = new Producto('fj219e', 'Nintendo Switch', 10000);
+//Creo un array vacio
+let arrayProductos = [];
 
-let consolas = [playStation, xbox, nintendoSwitch];
+//Instancio los objetos
+let leche = new Producto(9485, 'Milkaut', '$60');
+let fideo = new Producto(5637, 'Lucchetti', '$40');
+let azucar = new Producto(4903, 'Ledesma', '$40');
 
-playStation.imprimirDatos();
-xbox.imprimirDatos();
-nintendoSwitch.imprimirDatos();
+//Pusheo los objetos al array
+arrayProductos.push(leche, fideo, azucar);
+
+//Recorro el array para ejecutar el metodo de cada objeto
+for(i in arrayProductos){
+    arrayProductos[i].imprimeDatos();
+}
