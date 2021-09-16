@@ -26,9 +26,10 @@ huecosLibres(): indica cuántos contactos más podemos ingresar.
 Crea un menú con opciones por consola para probar todas estas funcionalidades.
 */
 
+//let agenda = new Agenda(10)
 let listaContacto = []
 
-class Agenda{
+class Contacto{
     constructor(nombre, telefono){
         this.nombre = nombre;
         this.telefono = telefono;
@@ -39,14 +40,14 @@ class Agenda{
         }
 
     }
-    existeContacto(contacto){
+    existeContacto(contacto){ //usar .find
         if(listaContacto.includes(contacto)){
             document.write(`${contacto} ya existe.`);
         }else{
             return document.write(`${contacto} no existe.`)
         }
     }
-    listarContactos(){
+    listarContactos(){ //crear bucle simple
         let claves = Object.keys(listaContacto); //['nombres', 'numserie', ...] (en forma de arreglo)
         console.log(claves.length);
         document.write("<br>FunkoIronMan<br>");
@@ -57,17 +58,17 @@ class Agenda{
   }
 
     }
-    buscarContacto(nombre){
+    buscarContacto(nombre){ //pedir nombre, guardar en variable y usar bucle para recorrer y comparar
+        //similar a existeContacto (find)
+    }
+    eliminarContacto(contacto){ //primero buscarlo y después eliminarlo con .splice O FILTER (EMILSE USÓ FILTER)
 
     }
-    eliminarContacto(contacto){
-
-    }
-    agendaLlena(){
-
+    agendaLlena(){ //el tamaño se guardó anteriormente en una variable, hay que compararlo con un length
+        //devuelve true o false
     }
     huecosLibres(){
-
+        //si se cumple la condición de que la cantidad de elementos de la agenda es < se hace (elementos - contactos.length)
     }
     opciones(){
 
@@ -77,3 +78,5 @@ class Agenda{
 let andy = new Agenda('Andy', 1140577540);
 listaContacto.push(andy);
 andy.listarContactos();
+
+//menú con do while (en el do va el switch, en el while un confirm)
